@@ -1,24 +1,35 @@
+import { useEffect, useState } from "react";
 import hero from "../assets/hero.jpeg";
+import { useLocation } from "react-router-dom";
 
 export default function Nav() {
+  const location = useLocation();
+  const [home, setHome] = useState();
+  useEffect(() => {
+    location.pathname === "/" ? setHome(true) : setHome(false);
+  }, [location.pathname]);
+
   return (
     <div
-      className="h-screen bg-cover text-white"
-      style={{ backgroundImage: `url(${hero})` }}
+      className={`${home ? "h-screen" : "h-auto"} bg-black bg-cover p-12 text-white`}
+      style={{
+        backgroundImage: `url(${home ? hero : ""})`,
+      }}
     >
-      <div className="fixed flex items-center p-4 font-light uppercase">
+      <div className="flex font-light uppercase">
         <div>
           <ul className="flex space-x-6">
-            <li className="items-center font-fenice text-xl uppercase tracking-widest">
-              Ralph Lauren
+            <li className="font-fenice text-xl uppercase tracking-widest">
+              <a href="/"> Ralph Lauren</a>
             </li>
             <li>Men</li>
             <li>Women</li>
-            <li>Kids</li>
-            <li>Discover</li>
+            <li>
+              <a href="/shop">Shop</a>
+            </li>
           </ul>
         </div>
-        <div className="fixed right-8 flex space-x-6">
+        <div className="fixed right-0 flex space-x-6 pr-16">
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -74,10 +85,6 @@ export default function Nav() {
             </svg>
           </button>
         </div>
-      </div>
-      <div className="relative top-1/2 flex flex-col items-center justify-center">
-        <p className="p-4 font-fenice text-5xl">Summer Arrivals</p>
-        <p>Seasonal brights to warm-weather classics</p>
       </div>
     </div>
   );
