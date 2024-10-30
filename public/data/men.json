@@ -1,49 +1,50 @@
-[ {
+[
+  {
     "id": "1",
     "name": "PRL x Naiomi Glasses Blanket",
     "desc": "Presenting the third and final drop of the Polo Ralph Lauren x Naiomi Glasses collection, the inaugural collaboration of the Ralph Lauren Artist in Residence programme, reflecting our evolved design approach with the artisans and communities who inspire us. The Polo Ralph Lauren x Naiomi Glasses collection honours Navajo heritage and centuries-old weaving traditions. Naiomi Glasses is a seventh-generation Diné (Navajo) textile artist and designer whose work reflects the beauty of her Indigenous culture. This concluding assortment captures Naiomi's love for rodeo culture, its heritage and its deep connection to the Navajo way of life. Grounded in denim and rich indigo hues, these pieces find inspiration in the signature attire of Navajo rodeo contestants and the colour of Dinétah (Navajo Nation) skies. Made in Italy, this fringed blanket – the second of the collaboration – carries on the tradition of utilitarian weaving while bringing together motifs loved by Naiomi, including the wedge weave pattern, the Saltillo diamond and the four-directional cross. The four-directional cross and the number four carry great significance in Navajo tradition, as well as in other Native communities. They reference the Earth's four directions and the stars. The blanket is presented in a collector's gift box, which has been created using water-based ink.",
-    "price": 499, 
+    "price": 499,
     "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710935717001_alternate3?$plpDeskRF$",
     "hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710935717001_lifestyle?$plpDeskRF$"
-},
-{
+  },
+  {
     "id": "2",
     "name": "Polo Ralph Lauren Yankees Jacket",
     "desc": "As a boy growing up in the Bronx, Mr Lauren loved going to Yankee Stadium™ to watch his hometown heroes play ball. This slub fleece jacket celebrates Mr Lauren's long-standing love of the Bronx Bombers™ and the game of baseball with New York Yankees™ patches.",
     "price": 529,
-"img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710953953001_alternate4?$plpDeskRF$",
-"hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710953953001_lifestyle?$plpDeskRF$"
-},
-{
+    "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710953953001_alternate4?$plpDeskRF$",
+    "hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710953953001_lifestyle?$plpDeskRF$"
+  },
+  {
     "id": "3",
-    "name": "Paint-Splatter Twill Field Jacket]",
+    "name": "Paint-Splatter Twill Field Jacket",
     "desc": "This season, the iconic field jacket is updated with paint splatters and an extensive wash process to achieve a timeworn look. The bi-swing back construction offers ease of movement for enhanced comfort.",
     "price": 819,
-"img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497103_alternate10?$rl_4x5_pdp$",
-"hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497103_lifestyle?$plpDeskRF$"
-},
-{
+    "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497103_alternate10?$rl_4x5_pdp$",
+    "hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497103_lifestyle?$plpDeskRF$"
+  },
+  {
     "id": "4",
     "name": "PRL x Naiomi Glasses Cotton Jumper",
     "desc": "Presenting the third and final drop of the Polo Ralph Lauren x Naiomi Glasses collection, the inaugural collaboration of the Ralph Lauren Artist in Residence programme, reflecting our evolved design approach with the artisans and communities who inspire us. The Polo Ralph Lauren x Naiomi Glasses collection honours Navajo heritage and centuries-old weaving traditions. Naiomi Glasses is a seventh-generation Diné (Navajo) textile artist and designer whose work reflects the beauty of her Indigenous culture. This concluding assortment captures Naiomi's love for rodeo culture, its heritage and its deep connection to the Navajo way of life. Grounded in denim and rich indigo hues, these pieces find inspiration in the signature attire of Navajo rodeo contestants and the colour of Dinétah (Navajo Nation) skies. Based on one of Naiomi's personal weavings, this unisex jumper utilises multiple cotton yarns that are dyed with true indigo to create a beautiful variation of blue shades and features four-directional crosses. The four-directional cross and the number four carry great significance in Navajo tradition, as well as in other Native communities. They reference the Earth's four directions and the stars.",
     "price": 999,
-"img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710934542001_alternate10?$rl_4x5_pdp$",
-"hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710934542001_alternate10?$plpDeskRF$"
-},
-{
+    "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710934542001_alternate10?$rl_4x5_pdp$",
+    "hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-AI710934542001_alternate10?$plpDeskRF$"
+  },
+  {
     "id": "5",
     "name": "Cotton Twill Coverall",
     "desc": "Inspired by vintage American flight suits from the 1960s, this coverall is crafted with lightweight cotton twill that is washed to achieve a timeworn appearance. It features multiple embroidered expedition patches and stencil-prints throughout.",
     "price": 1599,
-"img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497159_alternate10?$rl_4x5_pdp$",
-"hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497159_lifestyle?$plpDeskRF$"
-},
-{
+    "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497159_alternate10?$rl_4x5_pdp$",
+    "hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497159_lifestyle?$plpDeskRF$"
+  },
+  {
     "id": "6",
     "name": "5.75-Inch Traveler Classic Swim Trunk",
     "desc": "Embroidered with a playful sailfish motif, these mesh-lined swim trunks deliver iconic Polo style both in the water and out.",
     "price": 179,
-"img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1504914_alternate10?$rl_4x5_pdp$",
-"hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1504914_lifestyle?$plpDeskRF$"
-}
+    "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1504914_alternate10?$rl_4x5_pdp$",
+    "hoverImg": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1504914_lifestyle?$plpDeskRF$"
+  }
 ]

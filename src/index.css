@@ -11,3 +11,9 @@
     font-family: postbus;
     src: url('./assets/fonts/PostBus.ttf');
 }
+
+
+@font-face {
+    font-family: bodoni;
+    src: url('./assets/fonts/bodoni.ttf');
+}

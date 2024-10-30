@@ -4,25 +4,27 @@ import gift from "../assets/images/gift.jpeg";
 
 export default function Intro() {
   return (
-    <div className="m-3 flex items-center justify-center p-4">
+    <div className="font-bodoni m-3 flex items-center justify-center p-4">
       <div className="px-3 pr-16">
-        <p className="py-2 text-5xl">The World of Luxury</p>
-        <p className="px-1 text-xl">Explore collections</p>
+        <p className="py-2 text-3xl">The World of Luxury</p>
+        <p className="px-1">Explore collections</p>
       </div>
-      <button className="relative mx-1">
+      <a className="relative mx-1" href="/shop/men">
         <img src={men} alt="Men Collection" className="" />
-        <p className="absolute bottom-10 right-10 text-xl text-white">Men</p>
-      </button>
-      <button className="relative mx-1">
+        <p className="absolute bottom-10 right-10 text-xl tracking-wider text-white">
+          Men
+        </p>
+      </a>
+      <a className="relative mx-1" href="/shop/women">
         <img src={women} alt="Women Collection" className="" />
         <p className="absolute bottom-10 right-10 text-xl text-white">Women</p>
-      </button>
-      <button className="relative mx-1">
+      </a>
+      <a className="relative mx-1">
         <img src={gift} alt="Gift Cards" className="" />
         <p className="absolute bottom-10 right-10 text-xl text-white">
           Gift Cards
         </p>
-      </button>
+      </a>
     </div>
   );
 }

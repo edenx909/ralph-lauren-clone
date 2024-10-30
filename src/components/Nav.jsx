@@ -19,13 +19,13 @@ export default function Nav() {
       <div className="flex font-light uppercase">
         <div>
           <ul className="flex space-x-6">
-            <li className="font-fenice text-xl uppercase tracking-widest">
+            <li className="pr-8 font-fenice text-xl uppercase tracking-widest">
               <a href="/"> Ralph Lauren</a>
             </li>
-            <li>Men</li>
-            <li>Women</li>
+            <a href="/shop/men">Men</a>
+            <a href="/shop/women">Women</a>
             <li>
-              <a href="/shop">Shop</a>
+              <a href="/shop">Shop All</a>
             </li>
           </ul>
         </div>
