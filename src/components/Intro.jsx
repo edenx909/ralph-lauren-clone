@@ -4,7 +4,7 @@ import gift from "../assets/images/gift.jpeg";
 
 export default function Intro() {
   return (
-    <div className="font-bodoni m-3 flex items-center justify-center p-4">
+    <div className="m-3 flex items-center justify-center p-4 font-bodoni">
       <div className="px-3 pr-16">
         <p className="py-2 text-3xl">The World of Luxury</p>
         <p className="px-1">Explore collections</p>
@@ -19,7 +19,7 @@ export default function Intro() {
         <img src={women} alt="Women Collection" className="" />
         <p className="absolute bottom-10 right-10 text-xl text-white">Women</p>
       </a>
-      <a className="relative mx-1">
+      <a className="relative mx-1" href="/gift">
         <img src={gift} alt="Gift Cards" className="" />
         <p className="absolute bottom-10 right-10 text-xl text-white">
           Gift Cards

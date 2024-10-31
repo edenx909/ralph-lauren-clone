@@ -20,16 +20,15 @@ export default function Nav() {
         <div>
           <ul className="flex space-x-6">
             <li className="pr-8 font-fenice text-xl uppercase tracking-widest">
-              <a href="/"> Ralph Lauren</a>
+              <a href="/">Ralph Lauren</a>
             </li>
             <a href="/shop/men">Men</a>
             <a href="/shop/women">Women</a>
-            <li>
-              <a href="/shop">Shop All</a>
-            </li>
+            <a href="/gift">Gift</a>
+            <a href="/shop">Shop All</a>
           </ul>
         </div>
-        <div className="fixed right-0 flex space-x-6 pr-16">
+        <div className="absolute right-0 flex space-x-6 pr-16">
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +46,7 @@ export default function Nav() {
               />
             </svg>
           </button>
-          <button>
+          <a href="/wishlist">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1.2em"
@@ -68,8 +67,8 @@ export default function Nav() {
                 <path strokeLinecap="round" d="M5 20v-1a7 7 0 0 1 10-6.326" />
               </g>
             </svg>
-          </button>
-          <button>
+          </a>
+          <a href="/cart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1.2em"
@@ -83,7 +82,7 @@ export default function Nav() {
                 clipRule="evenodd"
               />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </div>

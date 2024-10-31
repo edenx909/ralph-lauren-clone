@@ -1,22 +1,22 @@
 export default function Footer() {
   return (
     <>
-      <div className="m-3 flex justify-evenly p-3">
-        <div className="flex flex-col">
-          <p className="py-4 uppercase">About</p>
+      <div className="m-3 flex flex-col justify-evenly p-3 text-sm md:flex-row">
+        <div className="flex flex-col py-6">
+          <p className="py-4 text-3xl uppercase">About</p>
           <a>About us</a>
           <a>Terms of Sale</a>
         </div>
         <div className="border" />
-        <div className="flex flex-col">
-          <p className="py-4 uppercase">Customer Service</p>
+        <div className="flex flex-col py-6">
+          <p className="py-4 text-3xl uppercase">Customer Service</p>
           <a>My Account</a>
           <a>Shipping</a>
           <a>Store Services</a>
         </div>
         <div className="border" />
-        <div>
-          <p className="py-4 uppercase">Contact Us</p>
+        <div className="py-6">
+          <p className="py-4 text-3xl uppercase">Contact Us</p>
           <p>Monday - Friday, 0930 - 1700 AEST </p>
           <p>1800 000 020</p>
           <p>
