@@ -16,17 +16,36 @@ export const WishlistProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }, [wishlist]);
+  const quickAddToWishlist = (item) => {
+    setWishlist((prev) => {
+      const existingItem = prev.find((cartItem) => cartItem.id === item.id);
+      if (existingItem) {
+        return prev.map((cartItem) =>
+          cartItem.id === item.id
+            ? {
+                ...cartItem,
+                quantity: (cartItem.quantity || 0) + 1,
+              }
+            : cartItem,
+        );
+      } else {
+        return [...prev, { ...item, quantity: 1 }];
+      }
+    });
+    console.log("quick added to wishlist", wishlist);
+  };
 
   const addToWishlist = (item) => {
     setWishlist((prev) => {
-      const existingItem = prev.find(
-        (wishlistItem) => wishlistItem.id === item.id,
-      );
+      const existingItem = prev.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
-        return prev.map((wishlistItem) =>
-          wishlistItem.id === item.id
-            ? { ...wishlistItem, quantity: (wishlistItem.quantity || 1) + 1 }
-            : wishlistItem,
+        return prev.map((cartItem) =>
+          cartItem.id === item.id
+            ? {
+                ...cartItem,
+                quantity: (cartItem.quantity || 1) + item.quantity,
+              }
+            : cartItem,
         );
       } else {
         return [...prev, { ...item, quantity: 1 }];
@@ -47,7 +66,13 @@ export const WishlistProvider = ({ children }) => {
 
   return (
     <WishlistContext.Provider
-      value={{ wishlist, addToWishlist, removeFromWishlist, clearWishlist }}
+      value={{
+        wishlist,
+        addToWishlist,
+        removeFromWishlist,
+        clearWishlist,
+        quickAddToWishlist,
+      }}
     >
       {children}
     </WishlistContext.Provider>

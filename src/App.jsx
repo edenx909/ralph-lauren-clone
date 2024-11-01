@@ -12,6 +12,8 @@ import Gift from "./components/Gift";
 import Cart from "./components/Cart";
 import Wishlist from "./components/Wishlist";
 import ProductPage from "./components/ProductPage";
+import About from "./components/About";
+import Account from "./components/Account";
 
 function App() {
   const [menProducts, setMenProducts] = useState([]);
@@ -75,6 +77,16 @@ function App() {
             />
             <Route path="/cart/" element={<Cart />} />
             <Route path="/wishlist/" element={<Wishlist />} />
+            <Route
+              path="/about/"
+              element={
+                <>
+                  <About />
+                  <Newsletter />
+                </>
+              }
+            />
+            <Route path="/account/" element={<Account />} />
           </Routes>
           <Footer />
         </BrowserRouter>

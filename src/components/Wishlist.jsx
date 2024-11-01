@@ -28,7 +28,7 @@ export default function Wishlist() {
         </div>
       ) : (
         <>
-          <div className="flex w-full flex-col md:w-3/4">
+          <div className="ml-8 flex w-full flex-col md:w-3/4">
             {wishlist.map((item) => (
               <div
                 key={item.id}
@@ -59,7 +59,7 @@ export default function Wishlist() {
               </div>
             ))}
           </div>
-          <div className="m-4 w-full p-4 md:w-1/4">
+          <div className="m-4 mr-8 flex w-full flex-col items-center p-4 md:w-1/4 md:items-end md:justify-start">
             <p className="py-6 text-2xl">Total Price</p>
             <p className="py-3 pr-2 text-blue-950">
               A$

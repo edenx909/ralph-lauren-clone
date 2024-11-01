@@ -5,8 +5,8 @@ import { useCart } from "../contexts/Cart";
 import { useWishlist } from "../contexts/Wishlist";
 
 export default function Products({ menProducts, womenProducts }) {
-  const { addToCart } = useCart();
-  const { addToWishlist } = useWishlist();
+  const { quickAddToCart } = useCart();
+  const { quickAddToWishlist } = useWishlist();
   const [sort, setSort] = useState("");
   const [filter, setFilter] = useState("");
   const location = useLocation();
@@ -75,13 +75,13 @@ export default function Products({ menProducts, womenProducts }) {
         </div>
       </div>
       <div className="flex flex-col flex-wrap items-center justify-center p-5 mobile:flex-row">
-        {render(sortedProducts, addToCart, addToWishlist)}
+        {render(sortedProducts, quickAddToWishlist, quickAddToCart)}
       </div>
     </>
   );
 }
 
-function render(sortedProducts, addToCart, addToWishlist) {
+function render(sortedProducts, quickAddToCart, quickAddToWishlist) {
   return sortedProducts.map((item) => (
     <a
       key={item.id}
@@ -92,9 +92,14 @@ function render(sortedProducts, addToCart, addToWishlist) {
         <img src={item.img} className="w-full object-cover" alt={item.name} />
 
         {/* TODO: ON HOVER */}
+
         <button
           className="absolute bottom-4 right-4 z-10"
-          onClick={() => addToCart(item)}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            quickAddToWishlist(item);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +115,11 @@ function render(sortedProducts, addToCart, addToWishlist) {
         </button>
         <button
           className="absolute right-4 top-4 z-10"
-          onClick={() => addToWishlist(item)}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            quickAddToCart(item);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

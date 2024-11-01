@@ -1,7 +1,7 @@
 export default function Newsletter() {
   return (
-    <div className="m-3 flex flex-col items-center justify-between border-b-[1px] border-t-[1px] p-4 lg:flex-row">
-      <p className="w-full text-center lg:w-3/4">
+    <div className="m-3 flex flex-col items-center justify-between border-b-[1px] border-t-[1px] p-4 py-16 lg:flex-row">
+      <p className="mb-3 w-full text-center lg:w-3/4">
         SIGN UP TO RECEIVE EMAIL UPDATES ON PROMOS, ANNOUNCEMENTS AND MORE
       </p>
       <div className="w-1-4 flex w-full border">

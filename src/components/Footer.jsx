@@ -4,13 +4,13 @@ export default function Footer() {
       <div className="m-3 flex flex-col justify-evenly p-3 text-sm md:flex-row">
         <div className="flex flex-col py-6">
           <p className="py-4 text-3xl uppercase">About</p>
-          <a>About us</a>
+          <a href="/about">About us</a>
           <a>Terms of Sale</a>
         </div>
         <div className="border" />
         <div className="flex flex-col py-6">
           <p className="py-4 text-3xl uppercase">Customer Service</p>
-          <a>My Account</a>
+          <a href="/account">My Account</a>
           <a>Shipping</a>
           <a>Store Services</a>
         </div>
@@ -18,14 +18,22 @@ export default function Footer() {
         <div className="py-6">
           <p className="py-4 text-3xl uppercase">Contact Us</p>
           <p>Monday - Friday, 0930 - 1700 AEST </p>
-          <p>1800 000 020</p>
+          <a href="tel:1800 000 020" className="text-blue-900">
+            1800 000 020
+          </a>
           <p>
-            For Enquires - <br /> onlineassistance@ralphlauren.com.au
+            For Enquires - <br />{" "}
+            <a
+              href="mailto:onlineassistance@ralphlauren.com.au"
+              className="text-blue-900"
+            >
+              onlineassistance@ralphlauren.com.au
+            </a>
           </p>
         </div>
       </div>
       <div className="border" />
-      <div className="flex items-center justify-center space-x-5 p-4">
+      <div className="flex items-center justify-center space-x-5 border-b-2 p-4">
         <a href="https://www.instagram.com/ralphlauren/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +129,7 @@ export default function Footer() {
           </svg>
         </a>
       </div>
-      <div className="flex items-center justify-center pb-7 pt-11">
+      <div className="p2 flex items-center justify-center">
         <p>Made by Eden using React & Framer Motion</p>
       </div>
     </>

@@ -11,7 +11,7 @@ export default function ProductPage({ menProducts, womenProducts }) {
   const productId = location.pathname.replace("/product/", "");
   const product = allProducts.find((product) => product.id === productId);
 
-  const [quanity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
   // for desc
   const [expand, setExpand] = useState(false);
   return (
@@ -34,20 +34,20 @@ export default function ProductPage({ menProducts, womenProducts }) {
               className="my-2 w-full border px-6 py-4"
               type="number"
               placeholder="*Quanity"
-              value={quanity}
+              value={quantity}
               onChange={(e) => {
                 setQuantity(e.target.value);
               }}
             />
             <button
               className="mx-1 my-4 rounded-lg border bg-[#041E3A] p-2 px-4 py-2 uppercase text-white"
-              onClick={() => addToCart(product)}
+              onClick={() => addToCart({ ...product, quantity })}
             >
               Add To Cart
             </button>
             <button
               className="my-4 rounded-lg border bg-[#041E3A] p-2 px-4 py-2 uppercase text-white"
-              onClick={() => addToWishlist(product)}
+              onClick={() => addToWishlist({ ...product, quantity })}
             >
               Add To Wishlist
             </button>

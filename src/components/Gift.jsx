@@ -46,7 +46,7 @@ export default function Gift() {
             placeholder="*Recipient's Name"
           />
           <input
-            type="number"
+            type="text"
             className="my-2 border px-6 py-4"
             placeholder="*Sender's Name"
           />
