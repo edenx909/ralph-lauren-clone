@@ -16,17 +16,20 @@ export const WishlistProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }, [wishlist]);
+
   const quickAddToWishlist = (item) => {
     setWishlist((prev) => {
-      const existingItem = prev.find((cartItem) => cartItem.id === item.id);
+      const existingItem = prev.find(
+        (wishlistItem) => wishlistItem.id === item.id,
+      );
       if (existingItem) {
-        return prev.map((cartItem) =>
-          cartItem.id === item.id
+        return prev.map((wishlistItem) =>
+          wishlistItem.id === item.id
             ? {
-                ...cartItem,
-                quantity: (cartItem.quantity || 0) + 1,
+                ...wishlistItem,
+                quantity: (wishlistItem.quantity || 0) + 1,
               }
-            : cartItem,
+            : wishlistItem,
         );
       } else {
         return [...prev, { ...item, quantity: 1 }];
@@ -37,15 +40,17 @@ export const WishlistProvider = ({ children }) => {
 
   const addToWishlist = (item) => {
     setWishlist((prev) => {
-      const existingItem = prev.find((cartItem) => cartItem.id === item.id);
+      const existingItem = prev.find(
+        (wishlistItem) => wishlistItem.id === item.id,
+      );
       if (existingItem) {
-        return prev.map((cartItem) =>
-          cartItem.id === item.id
+        return prev.map((wishlistItem) =>
+          wishlistItem.id === item.id
             ? {
-                ...cartItem,
-                quantity: (cartItem.quantity || 1) + item.quantity,
+                ...wishlistItem,
+                quantity: (wishlistItem.quantity || 1) + item.quantity,
               }
-            : cartItem,
+            : wishlistItem,
         );
       } else {
         return [...prev, { ...item, quantity: 1 }];

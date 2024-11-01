@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { useCart } from "../contexts/Cart";
 import { useWishlist } from "../contexts/Wishlist";
 export default function ProductPage({ menProducts, womenProducts }) {
@@ -10,6 +12,10 @@ export default function ProductPage({ menProducts, womenProducts }) {
   const location = useLocation();
   const productId = location.pathname.replace("/product/", "");
   const product = allProducts.find((product) => product.id === productId);
+
+  // for button animations
+  const [cartButton, setCartButton] = useState(false);
+  const [wishlistButton, setWishlistButton] = useState(false);
 
   const [quantity, setQuantity] = useState(1);
   // for desc
@@ -40,16 +46,76 @@ export default function ProductPage({ menProducts, womenProducts }) {
               }}
             />
             <button
-              className="mx-1 my-4 rounded-lg border bg-[#041E3A] p-2 px-4 py-2 uppercase text-white"
-              onClick={() => addToCart({ ...product, quantity })}
+              className="relative mx-1 my-4 h-12 w-1/3 rounded-lg border bg-[#041E3A] p-2 px-4 py-2 uppercase text-white"
+              onClick={() => {
+                addToCart({ ...product, quantity });
+                setCartButton(true);
+                setTimeout(() => {
+                  setCartButton(false);
+                }, 3000);
+              }}
             >
-              Add To Cart
+              <AnimatePresence>
+                {cartButton ? (
+                  <motion.span
+                    key="added"
+                    initial={{ opacity: 0, x: -60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -60 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    ✓ Added {quantity} to Your Cart
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="add"
+                    initial={{ opacity: 0, x: 60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 60 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    Add to Cart
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </button>
             <button
-              className="my-4 rounded-lg border bg-[#041E3A] p-2 px-4 py-2 uppercase text-white"
-              onClick={() => addToWishlist({ ...product, quantity })}
+              className="relative mx-1 my-4 h-12 w-1/3 rounded-lg border bg-[#041E3A] p-2 px-4 py-2 uppercase text-white"
+              onClick={() => {
+                addToWishlist({ ...product, quantity });
+                setWishlistButton(true);
+                setTimeout(() => {
+                  setWishlistButton(false);
+                }, 3000);
+              }}
             >
-              Add To Wishlist
+              <AnimatePresence>
+                {wishlistButton ? (
+                  <motion.span
+                    key="added"
+                    initial={{ opacity: 0, x: -60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -60 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    ✓ Added {quantity} to Your Wishlist
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="add"
+                    initial={{ opacity: 0, x: 60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 60 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    Add to Wishlist
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </button>
           </div>
         </div>

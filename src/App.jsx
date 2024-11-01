@@ -14,8 +14,11 @@ import Wishlist from "./components/Wishlist";
 import ProductPage from "./components/ProductPage";
 import About from "./components/About";
 import Account from "./components/Account";
+import Sidebar from "./components/Sidebar";
 
 function App() {
+  // for sidebar
+  const [open, setOpen] = useState(false);
   const [menProducts, setMenProducts] = useState([]);
   const [womenProducts, setWomanProducts] = useState([]);
   useEffect(() => {
@@ -37,13 +40,18 @@ function App() {
     <CartProvider>
       <WishlistProvider>
         <BrowserRouter>
-          <Nav />
+          <Sidebar open={open} setOpen={setOpen} />
+          <Nav open={open} setOpen={setOpen} />
           <Routes>
             <Route
               path="/"
               element={
                 <>
                   <Intro />
+                  <Products
+                    menProducts={menProducts.slice(0, 2)}
+                    womenProducts={womenProducts.slice(0, 2)}
+                  />
                   <Newsletter />
                 </>
               }

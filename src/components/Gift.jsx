@@ -19,7 +19,7 @@ export default function Gift() {
       <div className="w-full p-12 lg:w-1/2">
         <p className="py-4 text-3xl">Virtual Gift Card</p>
         <p>Arrives within 24 hours via email.</p>
-        <p className="py-4 text-lg uppercase">Select Gift Card Amount</p>{" "}
+        <p className="py-4 text-lg uppercase">Select Gift Card Amount</p>
         <div className="my-3">
           {predefinedAmount.map((amount) => (
             <button

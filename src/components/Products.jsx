@@ -52,8 +52,7 @@ export default function Products({ menProducts, womenProducts }) {
 
   return (
     <>
-      <div className="m-2 flex justify-center p-2"></div>
-      <div className="flex flex-col p-2">
+      <div className="flex flex-col p-2 pt-10">
         <div className="flex justify-evenly">
           <motion.button
             className={`h-12 rounded-full border ${location.pathname === "/shop" ? "" : "hidden"} ${filter === "" && "bg-black text-white"}`}
@@ -80,7 +79,7 @@ export default function Products({ menProducts, womenProducts }) {
             Women
           </motion.button>
           <motion.button
-            className={`flex h-12 items-center rounded-full border ${sort !== "" && "bg-black text-white"} `}
+            className={`flex h-12 items-center rounded-full border ${sort !== "" && "bg-black text-white"} ${location.pathname === "/" && "hidden"}`}
             initial={{ paddingLeft: "2rem", paddingRight: "2rem" }}
             whileHover={{ paddingLeft: "4rem", paddingRight: "4rem" }}
             onClick={handleSort}

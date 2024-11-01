@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import hero from "../assets/hero.jpeg";
 import Hamburger from "./macros/Hamburger";
 
@@ -11,13 +12,56 @@ export default function Nav({ open, setOpen }) {
     location.pathname === "/" ? setHome(true) : setHome(false);
   }, [location.pathname]);
 
+  // for scroll
+  const scrollRef = useRef(null);
+  const scrollToIntro = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  };
   return (
     <div
-      className={`${home ? "h-screen" : "h-auto"} bg-black bg-cover bg-center p-12 text-white`}
+      className={`${home ? "h-screen" : "h-auto"} relative top-0 bg-black bg-cover bg-center p-12 text-white`}
       style={{
         backgroundImage: `url(${home ? hero : ""})`,
       }}
+      ref={scrollRef}
     >
+      <button
+        className={`left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform text-xl ${home ? "absolute" : "hidden"}`}
+        onClick={scrollToIntro}
+      >
+        Scroll to Get Started
+        <span className="px-2">
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.3em"
+            height="1.3em"
+            viewBox="0 0 24 24"
+            initial={{ y: -10, rotate: 180 }}
+            animate={{ y: [10, -10, 10] }}
+            transition={{
+              duration: 3,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+          >
+            <g
+              fill="none"
+              stroke="white"
+              strokeLinecap="round"
+              strokeWidth={1.5}
+            >
+              <path strokeMiterlimit={10} d="M12 4v16"></path>
+              <path
+                strokeLinejoin="round"
+                d="M19.66 11.033L13.089 4.46a1.53 1.53 0 0 0-2.176 0L4.34 11.033"
+              ></path>
+            </g>
+          </motion.svg>
+        </span>
+      </button>
       <div className="flex items-center justify-start font-light uppercase">
         <div>
           <ul className="flex items-center justify-center space-x-6">

@@ -8,7 +8,7 @@ export default function Cart() {
     <div className="flex flex-col md:flex-row">
       {cart.length === 0 ? (
         <div className="relative flex w-full items-center justify-start border-b p-4">
-          Your Cart is Empty!
+          <p className="p-4 text-xl">Your Cart is Empty!</p>
         </div>
       ) : (
         <>

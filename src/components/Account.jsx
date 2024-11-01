@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Account() {
   const [activeTab, setActiveTab] = useState("signIn");
   return (
-    <div className="mx-auto my-10 flex w-1/2 flex-row items-center justify-center outline md:flex-col">
+    <div className="mx-auto my-10 flex w-1/2 flex-col items-center justify-center outline">
       <div className="flex w-full justify-evenly p-16">
         <button onClick={() => setActiveTab("signIn")}>Sign In</button>
         <button onClick={() => setActiveTab("signUp")}>Sign Up</button>

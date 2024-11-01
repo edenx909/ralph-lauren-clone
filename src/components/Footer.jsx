@@ -1,20 +1,20 @@
 export default function Footer() {
   return (
     <>
-      <div className="m-3 flex flex-col justify-evenly p-3 text-sm md:flex-row">
+      <div className="m-3 flex flex-col justify-evenly border-t-[1px] p-3 text-sm md:flex-row">
         <div className="flex flex-col py-6">
           <p className="py-4 text-3xl uppercase">About</p>
           <a href="/about">About us</a>
           <a>Terms of Sale</a>
         </div>
-        <div className="border" />
+        <div className="border-r-[1px] border-t-[1px]" />
         <div className="flex flex-col py-6">
           <p className="py-4 text-3xl uppercase">Customer Service</p>
           <a href="/account">My Account</a>
           <a>Shipping</a>
           <a>Store Services</a>
         </div>
-        <div className="border" />
+        <div className="border-r-[1px] border-t-[1px]" />
         <div className="py-6">
           <p className="py-4 text-3xl uppercase">Contact Us</p>
           <p>Monday - Friday, 0930 - 1700 AEST </p>
@@ -32,8 +32,8 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="border" />
-      <div className="flex items-center justify-center space-x-5 border-b-2 p-4">
+      <div className="border-t-[1px]" />
+      <div className="flex items-center justify-center space-x-5 p-4">
         <a href="https://www.instagram.com/ralphlauren/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
