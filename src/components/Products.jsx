@@ -52,36 +52,52 @@ export default function Products({ menProducts, womenProducts }) {
 
   return (
     <>
-      <div className="m-2 flex justify-center p-2">
-        <button
-          className="mx-auto h-12 w-3/5 rounded-full border px-6"
-          onClick={handleSort}
-        >
-          Sort {sort === "asc" ? "▲" : sort === "desc" ? "▼" : ""}
-        </button>
-      </div>
+      <div className="m-2 flex justify-center p-2"></div>
       <div className="flex flex-col p-2">
-        <div
-          className={`${location.pathname === "/shop" ? "flex justify-evenly" : "hidden"} `}
-        >
-          <button
-            className="h-12 rounded-full border px-6"
+        <div className="flex justify-evenly">
+          <motion.button
+            className={`h-12 rounded-full border ${location.pathname === "/shop" ? "" : "hidden"} ${filter === "" && "bg-black text-white"}`}
+            initial={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+            whileHover={{ paddingLeft: "4rem", paddingRight: "4rem" }}
             onClick={() => setFilter("")}
           >
             All
-          </button>
-          <button
-            className="h-12 rounded-full border px-6"
+          </motion.button>
+          <motion.button
+            className={`h-12 rounded-full border ${location.pathname === "/shop" ? "" : "hidden"} ${filter === "men" && "bg-black text-white"}`}
+            initial={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+            whileHover={{ paddingLeft: "4rem", paddingRight: "4rem" }}
             onClick={() => setFilter("men")}
           >
             Men
-          </button>
-          <button
-            className="h-12 rounded-full border px-6"
+          </motion.button>
+          <motion.button
+            className={`h-12 rounded-full border ${location.pathname === "/shop" ? "" : "hidden"} ${filter === "women" && "bg-black text-white"}`}
+            initial={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+            whileHover={{ paddingLeft: "4rem", paddingRight: "4rem" }}
             onClick={() => setFilter("women")}
           >
             Women
-          </button>
+          </motion.button>
+          <motion.button
+            className={`flex h-12 items-center rounded-full border ${sort !== "" && "bg-black text-white"} `}
+            initial={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+            whileHover={{ paddingLeft: "4rem", paddingRight: "4rem" }}
+            onClick={handleSort}
+          >
+            <p className="">Sort</p>
+            <motion.span
+              className={` ${sort !== "" && "px-2 text-white"}`}
+              initial={{ scale: 0 }}
+              animate={{
+                rotate: sort === "asc" ? 0 : sort === "desc" ? 180 : 0,
+                scale: sort !== null ? 1 : 0,
+              }}
+              transition={{ duration: 1 }}
+            >
+              {sort !== "" ? "▲" : null}
+            </motion.span>
+          </motion.button>
         </div>
       </div>
 
@@ -149,20 +165,21 @@ function render(
           }}
         >
           <motion.span
-            className="z-10 mr-1 origin-right rounded-xl bg-white px-2 text-sm text-black"
+            className={`z-10 mr-1 origin-right rounded-xl bg-white px-2 text-sm text-black`}
             initial={{ scale: 0 }}
             animate={{ scale: wishlistClick === item.id ? 1 : 0 }}
           >
             Added to Wishlist
           </motion.span>
-          <svg
+          <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.1em"
             height="1.1em"
             viewBox="0 0 48 48"
+            whileHover={{ scale: 1.3 }}
           >
             <defs>
-              <mask id="ipSLoveAndHelp0">
+              <mask id={`mask-${item.id}`}>
                 <g
                   fill="none"
                   strokeLinecap="round"
@@ -170,7 +187,7 @@ function render(
                   strokeWidth={4}
                 >
                   <path
-                    fill="#fff"
+                    fill={wishlistClick === item.id ? "#fff" : "#000"}
                     stroke="#fff"
                     d="M15 7C8.925 7 4 11.925 4 18c0 11 13 21 20 23.326C31 39 44 29 44 18c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.99 10.99 0 0 0 15 7"
                   ></path>
@@ -181,9 +198,9 @@ function render(
             <path
               fill="white"
               d="M0 0h48v48H0z"
-              mask="url(#ipSLoveAndHelp0)"
+              mask={`url(#mask-${item.id})`}
             ></path>
-          </svg>
+          </motion.svg>
         </motion.button>
 
         <motion.button
@@ -205,17 +222,61 @@ function render(
           >
             Added to Cart
           </motion.span>
-          <svg
+          <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.3em"
             height="1.3em"
-            viewBox="0 0 24 24"
+            viewBox="0 0 48 48"
+            whileHover={{ scale: 1.3 }}
           >
+            <defs>
+              <mask id={`ipSShoppingCart-${item.id}`}>
+                <g fill="none">
+                  <path
+                    fill={cartClick === item.id ? "#fff" : "#000"}
+                    d="M39 32H13L8 12h36z"
+                  ></path>
+                  <path
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={4}
+                    d="M3 6h3.5L8 12m0 0l5 20h26l5-20z"
+                  ></path>
+                  <circle
+                    cx={13}
+                    cy={39}
+                    r={3}
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={4}
+                  ></circle>
+                  <circle
+                    cx={39}
+                    cy={39}
+                    r={3}
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={4}
+                  ></circle>
+                  <path
+                    stroke="#000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={4}
+                    d="M22 22h8m-4 4v-8"
+                  ></path>
+                </g>
+              </mask>
+            </defs>
             <path
               fill="white"
-              d="m3.72 2.788l.55 1.862h14.654c1.84 0 3.245 1.717 2.715 3.51l-1.655 5.6c-.352 1.194-1.471 1.99-2.715 1.99H8.113c-1.244 0-2.362-.796-2.715-1.99L2.281 3.213a.75.75 0 1 1 1.438-.425M13.25 8a.75.75 0 0 0-1.5 0v1.25H10.5a.75.75 0 0 0 0 1.5h1.25V12a.75.75 0 0 0 1.5 0v-1.25h1.25a.75.75 0 0 0 0-1.5h-1.25zM8.5 17.25a2.25 2.25 0 1 0 0 4.5a2.25 2.25 0 0 0 0-4.5m8 0a2.25 2.25 0 1 0 0 4.5a2.25 2.25 0 0 0 0-4.5"
+              d="M0 0h48v48H0z"
+              mask={`url(#ipSShoppingCart-${item.id})`}
             ></path>
-          </svg>
+          </motion.svg>
         </motion.button>
       </div>
       <div className="p-2">
