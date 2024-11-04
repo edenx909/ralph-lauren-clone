@@ -20,7 +20,7 @@ export default function Account() {
         </motion.button>
         <motion.button
           onClick={() => setActiveTab("signUp")}
-          className="m-5 border py-2 uppercase"
+          className="m-5 mx-auto border py-2 uppercase"
           animate={{
             paddingLeft: activeTab === "signUp" ? "5em" : "2em",
             paddingRight: activeTab === "signUp" ? "5em" : "2em",
