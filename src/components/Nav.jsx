@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import hero from "../assets/hero.jpeg";
 import Hamburger from "./macros/Hamburger";
 
@@ -12,68 +13,115 @@ export default function Nav({ open, setOpen }) {
     location.pathname === "/" ? setHome(true) : setHome(false);
   }, [location.pathname]);
 
-  // for scroll
-  const scrollRef = useRef(null);
-  const scrollToIntro = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
-  };
   return (
     <div
       className={`${home ? "h-screen" : "h-auto"} relative top-0 bg-black bg-cover bg-center p-12 text-white`}
       style={{
         backgroundImage: `url(${home ? hero : ""})`,
       }}
-      ref={scrollRef}
     >
-      <button
-        className={`left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform text-xl ${home ? "absolute" : "hidden"}`}
-        onClick={scrollToIntro}
+      <span
+        className={`flex ${home ? "absolute" : "hidden"} bottom-10 right-10`}
       >
-        Scroll to Get Started
-        <span className="px-2">
-          <motion.svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.3em"
-            height="1.3em"
-            viewBox="0 0 24 24"
-            initial={{ y: -10, rotate: 180 }}
-            animate={{ y: [10, -10, 10] }}
-            transition={{
-              duration: 3,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-          >
-            <g
-              fill="none"
-              stroke="white"
-              strokeLinecap="round"
-              strokeWidth={1.5}
-            >
-              <path strokeMiterlimit={10} d="M12 4v16"></path>
-              <path
-                strokeLinejoin="round"
-                d="M19.66 11.033L13.089 4.46a1.53 1.53 0 0 0-2.176 0L4.34 11.033"
-              ></path>
-            </g>
-          </motion.svg>
-        </span>
-      </button>
+        <motion.svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2em"
+          height="2em"
+          viewBox="0 0 24 24"
+          initial={{ y: -5, rotate: 180 }}
+          animate={{ y: [5, -5, 5] }}
+          transition={{
+            duration: 3,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <g fill="none" stroke="white" strokeLinecap="round" strokeWidth={1.5}>
+            <path strokeMiterlimit={10} d="M12 4v16"></path>
+            <path
+              strokeLinejoin="round"
+              d="M19.66 11.033L13.089 4.46a1.53 1.53 0 0 0-2.176 0L4.34 11.033"
+            ></path>
+          </g>
+        </motion.svg>
+      </span>
+
       <div className="flex items-center justify-start font-light uppercase">
         <div>
           <ul className="flex items-center justify-center space-x-6">
-            <li className="pr-8 font-fenice text-xl uppercase tracking-widest">
+            <li className="pr-8 text-xl uppercase tracking-widest">
               <a href="/">Ralph Lauren</a>
             </li>
             <Hamburger open={open} setOpen={setOpen} />
             <div className="hidden items-center justify-center space-x-6 md:flex">
-              <a href="/shop/men">Men</a>
-              <a href="/shop/women">Women</a>
-              <a href="/gift">Gift</a>
-              <a href="/shop">Shop All</a>
+              <motion.a
+                href="/shop/men"
+                className="relative inline-block"
+                whileHover={{ color: "#fff" }}
+              >
+                <span>Men</span>
+                <motion.div
+                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-white"
+                  initial={{ scaleX: 0 }}
+                  animate={{
+                    scaleX: location.pathname === "/shop/men" ? 1.3 : 0,
+                  }}
+                  exit={{ scaleX: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
+
+              <motion.a
+                href="/shop/women"
+                className="relative inline-block"
+                whileHover={{ color: "#fff" }}
+              >
+                <span>Women</span>
+                <motion.div
+                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-white"
+                  initial={{ scaleX: 0 }}
+                  animate={{
+                    scaleX: location.pathname === "/shop/women" ? 1.3 : 0,
+                  }}
+                  exit={{ scaleX: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
+
+              <motion.a
+                href="/gift"
+                className="relative inline-block"
+                whileHover={{ color: "#fff" }}
+              >
+                <span>Gift</span>
+                <motion.div
+                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-white"
+                  initial={{ scaleX: 0 }}
+                  animate={{
+                    scaleX: location.pathname === "/gift" ? 1.3 : 0,
+                  }}
+                  exit={{ scaleX: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
+
+              <motion.a
+                href="/shop"
+                className="relative inline-block"
+                whileHover={{ color: "#fff" }}
+              >
+                <span>Shop</span>
+                <motion.div
+                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-white"
+                  initial={{ scaleX: 0 }}
+                  animate={{
+                    scaleX: location.pathname === "/shop" ? 1.3 : 0,
+                  }}
+                  exit={{ scaleX: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
             </div>
           </ul>
         </div>

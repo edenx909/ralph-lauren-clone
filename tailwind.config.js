@@ -4,8 +4,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        fenice: ["fenice", "helvetica"],
-        postbus: ["postbus", "helvetice"],
         bodoni: ["bodoni", "helvetice"],
       },
 

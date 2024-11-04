@@ -1,12 +1,35 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Account() {
   const [activeTab, setActiveTab] = useState("signIn");
   return (
-    <div className="mx-auto my-10 flex w-1/2 flex-col items-center justify-center outline">
+    <div className="mx-auto my-10 flex w-3/4 flex-col items-center justify-center overflow-hidden outline">
       <div className="flex w-full justify-evenly p-16">
-        <button onClick={() => setActiveTab("signIn")}>Sign In</button>
-        <button onClick={() => setActiveTab("signUp")}>Sign Up</button>
+        <motion.button
+          onClick={() => setActiveTab("signIn")}
+          className="m-5 mx-auto border py-2 uppercase"
+          animate={{
+            paddingLeft: activeTab === "signIn" ? "5em" : "2em",
+            paddingRight: activeTab === "signIn" ? "5em" : "2em",
+            backgroundColor: activeTab === "signIn" ? "black" : "transparent",
+            color: activeTab === "signIn" ? "white" : "black",
+          }}
+        >
+          Sign In
+        </motion.button>
+        <motion.button
+          onClick={() => setActiveTab("signUp")}
+          className="m-5 border py-2 uppercase"
+          animate={{
+            paddingLeft: activeTab === "signUp" ? "5em" : "2em",
+            paddingRight: activeTab === "signUp" ? "5em" : "2em",
+            backgroundColor: activeTab === "signUp" ? "black" : "transparent",
+            color: activeTab === "signUp" ? "white" : "black",
+          }}
+        >
+          Sign Up
+        </motion.button>
       </div>
       {/* SIGN IN */}
       <div
@@ -30,7 +53,7 @@ export default function Account() {
           </p>
         </div>
         <button className="m-6 w-3/4 border bg-[#041E3A] px-6 py-3 uppercase text-white">
-          Create Account
+          Sign In
         </button>
       </div>
       {/* SIGN UP */}

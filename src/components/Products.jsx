@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import { useCart } from "../contexts/Cart";
 import { useWishlist } from "../contexts/Wishlist";
 

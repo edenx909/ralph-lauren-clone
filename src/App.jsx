@@ -17,7 +17,7 @@ import Account from "./components/Account";
 import Sidebar from "./components/Sidebar";
 
 function App() {
-  // for sidebar
+  // for sidebar < 768
   const [open, setOpen] = useState(false);
   const [menProducts, setMenProducts] = useState([]);
   const [womenProducts, setWomanProducts] = useState([]);

@@ -128,14 +128,20 @@ export default function ProductPage({ menProducts, womenProducts }) {
 
 const ProductDesc = ({ product, expand, setExpand }) => {
   const toggleExpand = () => setExpand(!expand);
+
+  // if its long enough to need truncate
+  const isLong = product.desc.split(" ").length > 20;
+
   return (
     <div className="py-5">
       <p className={`overflow-hidden ${expand ? "" : "line-clamp-4"}`}>
         {product.desc}
       </p>
-      <button onClick={toggleExpand}>
-        {expand ? "Show Less" : "Show More"}
-      </button>
+      {isLong && (
+        <button onClick={toggleExpand} className="bg-white text-blue-950">
+          {expand ? "Show Less" : "Show More"}
+        </button>
+      )}
     </div>
   );
 };

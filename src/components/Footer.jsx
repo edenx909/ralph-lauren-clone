@@ -1,21 +1,27 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+
 export default function Footer() {
+  // for footer portfolio link
+  const [hover, setHover] = useState(false);
+
   return (
     <>
       <div className="m-3 flex flex-col justify-evenly border-t-[1px] p-3 text-sm md:flex-row">
-        <div className="flex flex-col py-6">
+        <div className="flex flex-col space-y-1 py-6">
           <p className="py-4 text-3xl uppercase">About</p>
           <a href="/about">About us</a>
           <a>Terms of Sale</a>
         </div>
         <div className="border-r-[1px] border-t-[1px]" />
-        <div className="flex flex-col py-6">
+        <div className="flex flex-col space-y-1 py-6">
           <p className="py-4 text-3xl uppercase">Customer Service</p>
           <a href="/account">My Account</a>
           <a>Shipping</a>
           <a>Store Services</a>
         </div>
         <div className="border-r-[1px] border-t-[1px]" />
-        <div className="py-6">
+        <div className="space-y-1 py-6">
           <p className="py-4 text-3xl uppercase">Contact Us</p>
           <p>Monday - Friday, 0930 - 1700 AEST </p>
           <a href="tel:1800 000 020" className="text-blue-900">
@@ -130,7 +136,25 @@ export default function Footer() {
         </a>
       </div>
       <div className="p2 flex items-center justify-center">
-        <p>Made by Eden using React & Framer Motion</p>
+        <p className="m-2">
+          <a
+            href="https://edenxrana.vercel.app/"
+            className="text-blue-950 underline"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            <motion.span
+              initial={{ rotate: 0 }}
+              animate={{ rotate: hover ? 360 : 0 }}
+              transition={{ duration: 0.2 }}
+              className="mr-1 inline-block text-blue-950"
+            >
+              ©
+            </motion.span>
+            Made by Eden
+          </a>
+        </p>
+        <p>w/ React & Framer Motion</p>
       </div>
     </>
   );
