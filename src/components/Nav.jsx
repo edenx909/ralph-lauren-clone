@@ -20,33 +20,6 @@ export default function Nav({ open, setOpen }) {
         backgroundImage: `url(${home ? hero : ""})`,
       }}
     >
-      <span
-        className={`flex ${home ? "absolute" : "hidden"} bottom-10 right-10`}
-      >
-        <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="2em"
-          height="2em"
-          viewBox="0 0 24 24"
-          initial={{ y: -5, rotate: 180 }}
-          animate={{ y: [5, -5, 5] }}
-          transition={{
-            duration: 3,
-            ease: "easeInOut",
-            repeat: Infinity,
-            repeatType: "loop",
-          }}
-        >
-          <g fill="none" stroke="white" strokeLinecap="round" strokeWidth={1.5}>
-            <path strokeMiterlimit={10} d="M12 4v16"></path>
-            <path
-              strokeLinejoin="round"
-              d="M19.66 11.033L13.089 4.46a1.53 1.53 0 0 0-2.176 0L4.34 11.033"
-            ></path>
-          </g>
-        </motion.svg>
-      </span>
-
       <div className="flex items-center justify-start font-light uppercase">
         <div>
           <ul className="flex items-center justify-center space-x-6">
@@ -180,6 +153,32 @@ export default function Nav({ open, setOpen }) {
           </a>
         </div>
       </div>
+      <span
+        className={`flex ${home ? "absolute" : "hidden"} bottom-10 right-10`}
+      >
+        <motion.svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2em"
+          height="2em"
+          viewBox="0 0 24 24"
+          initial={{ y: -5, rotate: 180 }}
+          animate={{ y: [5, -5, 5] }}
+          transition={{
+            duration: 3,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <g fill="none" stroke="white" strokeLinecap="round" strokeWidth={1.5}>
+            <path strokeMiterlimit={10} d="M12 4v16"></path>
+            <path
+              strokeLinejoin="round"
+              d="M19.66 11.033L13.089 4.46a1.53 1.53 0 0 0-2.176 0L4.34 11.033"
+            ></path>
+          </g>
+        </motion.svg>
+      </span>
     </div>
   );
 }

@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        bodoni: ["bodoni", "helvetice"],
+        bodoni: ["bodoni", "helvetica"],
+        sarcolenta: ["sarcolenta", "helvetica"],
       },
-
       screens: {
         mobile: "887px",
       },

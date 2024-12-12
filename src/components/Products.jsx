@@ -93,7 +93,7 @@ export default function Products({ menProducts, womenProducts }) {
                 rotate: sort === "asc" ? 0 : sort === "desc" ? 180 : 0,
                 scale: sort !== null ? 1 : 0,
               }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.2 }}
             >
               {sort !== "" ? "▲" : null}
             </motion.span>
@@ -166,8 +166,11 @@ function render(
         >
           <motion.span
             className={`z-10 mr-1 origin-right rounded-xl bg-white px-2 text-sm text-black`}
-            initial={{ scale: 0 }}
-            animate={{ scale: wishlistClick === item.id ? 1 : 0 }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{
+              scale: wishlistClick === item.id ? 1 : 0,
+              opacity: wishlistClick === item.id ? 1 : 0,
+            }}
           >
             Added to Wishlist
           </motion.span>

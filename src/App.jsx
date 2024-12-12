@@ -49,8 +49,8 @@ function App() {
                 <>
                   <Intro />
                   <Products
-                    menProducts={menProducts.slice(0, 2)}
-                    womenProducts={womenProducts.slice(0, 2)}
+                    menProducts={menProducts.slice(0, 3)}
+                    womenProducts={womenProducts.slice(0, 3)}
                   />
                   <Newsletter />
                 </>

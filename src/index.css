@@ -2,21 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-  
 @font-face {
-    font-family: fenice;
-    src: url('./assets/fonts/fenice.ttf');
+  font-family: sarcolenta;
+  src: url("./assets/fonts/Sarcolenta.ttf");
 }
-
 @font-face {
-    font-family: postbus;
-    src: url('./assets/fonts/PostBus.ttf');
-}
-
-
-@font-face {
-    font-family: bodoni;
-    src: url('./assets/fonts/bodoni.ttf');
+  font-family: bodoni;
+  src: url("./assets/fonts/bodoni.ttf");
 }
